@@ -1,0 +1,75 @@
+Hashing is a techinqiue to reduce searching time in a algo at the expense of space.
+
+Hash Table : 
+Hash Table is an array in which we store elements according to some key and this key is calculated by the has function.
+
+Hash Function: 
+Hash Function is used to find key from the array elements.
+
+For finding key, there are 4 methods
+1) Division by 10 ( h(k) = i % 10 where i is the element in the array)
+2) Division by n ( h(k) = i % n where i is the element in the array and n can be any number(it is not length of the list) )
+3) Mid Sqaure -- 236 -- Midddle element is 3 -- Square it -- U get 9 -- U store it at 9th index
+4) Wrapping -- 123456 -- u do 123+456 -- add it that index ( 579)
+ 
+
+
+
+1) Load Factor : 
+Load Factor is number of elements in the hash table divided by size of hash table.
+
+2) Collision : 
+Collision happens when hash function is giving same keys for more than 1 element.
+To avoid collision ( Collision resolution techqique) , 
+
+ (i) Direct Chaining ( Closed Addresssing / Open Hashing ) : 
+ Take this string l = [ 38,23,21,45,46]
+ h(k) = i % 5
+ 0 -- 45
+ 1 -- 21 --> 46
+ 2 -- 
+ 3 -- 38 --> 23
+ 4 --
+ 5 -- 
+If two or more array elements are hashed to the same location ( keys are same ), we connect them with the help of linked list. 
+This is known as direct chaining.
+ 
+(ii) Open Addresssing ( Closed Hashing /Closed Chaining ) :
+ There are different types in this
+  (a) Linear Probing:
+  In Linear Probing , if there is a case of collision , then we need to rehash the the element at the hash index of (i+k)%5
+   0 -- 45
+   1 -- 21 
+   2 -- 46
+   3 -- 38 
+   4 -- 23
+   5 --
+  (b) Quadratic Probing : 
+  In Quadratic Probing, if there is a case  of collision , then we need to rehash the element at the hash index of (i+k^2)%11 starting from k=1 and then continue if the place is already
+  occupied
+l= [ 31 , 19 , 2 , 13 , 25 , 24] and h(k) = i % 11
+   0 -- 
+   1 --  
+   2 -- 11
+   3 -- 13 
+   4 -- 25
+   5 --
+   6 -- 24 
+   7 -- 
+   8 -- 19 
+   9 -- 31
+  (c) Double Hashing : 
+  l = [ 58 , 14 , 91 , 25] h1(k) = i % 11 , h2(k) = 7-i % 7 
+	u start rehash if h1(k) fails with h1(k) + h2(k) if fails again then h1(k) + 2h2(k) and so on 
+   0 -- 
+   1 --  
+   2 -- 58
+   3 -- 25
+   4 -- 
+   5 --
+   6 -- 91 
+   7 -- 
+   8 --  
+   9 -- 
+   10 -- 14
+
