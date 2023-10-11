@@ -1,0 +1,9 @@
+HashSet is Set based implementation.
+HashMap is a Key:Value based Implementation. (Dictionary in Python) 
+
+HashSet can be used when u don't need index. 
+It is more effecient than lists and takes less time complexity compared to list.
+
+HashMap uses Hashing techinque to store the key values pairs.
+It takes O(1) time complexity.
+
